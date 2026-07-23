@@ -1,0 +1,109 @@
+.header-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2px 6px;
+  background-color: #2f2f2f;
+  color: white;
+  gap: 10px;
+}
+img {
+  width: 30px;
+  height: 30px;
+}
+.logo {
+  width: 100px;
+  height: auto;
+  background-color: #2f2f2f;
+}
+.location {
+  display: flex;
+  flex-direction: row;
+  font-size: 0.9rem;
+}
+.location:hover {
+  display: flex;
+  flex-direction: row;
+  font-size: 0.9rem;
+  border: 1px solid white;
+}
+.location-icon {
+  width: 20px;
+  height: 15px;
+  align-self: center;
+  padding-right: 3px;
+}
+form {
+  display: flex;
+  flex: 1;
+  max-width: 1500px;
+}
+select {
+  width: 45px;
+  padding: 10px 10px 10px 5px;
+  flex-shrink: 0;
+}
+input {
+  flex: 1;
+  min-width: 0;
+  padding: 10px;
+}
+.search {
+  width: 30px;
+  height: 30px;
+  padding: 2px;
+}
+button {
+  padding: 2px;
+}
+
+.flag {
+  width: 22px;
+  height: 22px;
+}
+.flag:hover {
+  width: 22px;
+  height: 22px;
+  border: 1px solid white;
+}
+.account {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.account:hover {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  border: 1px solid white;
+}
+.account > select {
+  width: fit-content;
+  border: none;
+  background-color: #2f2f2f;
+  color: white;
+  padding: 0;
+  font-weight: 600;
+}
+.return-btn {
+  background-color: #2f2f2f;
+  color: white;
+  border: none;
+}
+.return-btn:hover {
+  background-color: #2f2f2f;
+  color: white;
+  border: 1px solid white;
+}
+.cart-btn {
+  background-color: #2f2f2f;
+  color: white;
+  border: none;
+}
+
+.cart-btn:hover {
+  background-color: #2f2f2f;
+  color: white;
+  border: 1px solid white;
+}
