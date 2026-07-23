@@ -1,4 +1,4 @@
-import CartSection from "./components/CartSection";
+import CartSection from "./components/CartSection/CartSection";
 import SavedSection from "./components/SavedSection";
 import Header from "./components/Header/Header";
 
