@@ -1,4 +1,4 @@
-import { use, useState } from "react";
+import { useState } from "react";
 import logo from "../../assets/Amazon_icon.png";
 import location from "../../assets/location.png";
 import search from "../../assets/search.png";
@@ -18,7 +18,7 @@ export default function Header() {
           Deliver to Stephanie <br /> <strong>Boston 02116</strong>
         </div>
       </div>
-      <form>
+      <form onSubmit={(e) => e.preventDefault()} role="search">
         <select
           value={category}
           onChange={(e) => setCategory(e.target.value)}
@@ -31,10 +31,10 @@ export default function Header() {
         <input
           type="search"
           value={searchBar}
-          onChange={(e) => setSearchBar(e.target.value)}
+          onChange={(e) => setSearchBar(e.tfarget.value)}
           aria-label="search-bar"
         />
-        <button>
+        <button type="sumbit" aria-label="Search">
           <img className="search" src={search} alt="search button" />
         </button>
       </form>

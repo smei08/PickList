@@ -31,7 +31,6 @@
   border-bottom: 1px solid #d5d9d9;
 }
 
-/* Row: checkbox | image | info | price */
 .item-row {
   display: grid;
   grid-template-columns: auto 180px 1fr auto;
