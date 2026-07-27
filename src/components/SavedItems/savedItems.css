@@ -1,0 +1,64 @@
+.saved-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  border: 1px solid #e7e7e7;
+  margin: -0.5px;
+}
+
+.saved-image {
+  width: 100%;
+  height: 220px;
+  object-fit: contain;
+  margin-bottom: 12px;
+}
+
+.saved-title {
+  font-size: 16px;
+  font-weight: 400;
+  margin: 0 0 6px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.saved-price {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.saved-prime {
+  font-size: 13px;
+  margin: 0 0 12px;
+}
+
+.move-to-cart {
+  background: #fff;
+  border: 1px solid #888c8c;
+  border-radius: 20px;
+  padding: 8px 12px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 5px rgba(15, 17, 17, 0.15);
+}
+.move-to-cart:hover {
+  background: #f7fafa;
+}
+
+.slink-btn {
+  background: none;
+  border: none;
+  color: #007185;
+  font-size: 14px;
+  text-align: left;
+  padding: 2px 0;
+  cursor: pointer;
+}
+.slink-btn:hover {
+  color: #c7511f;
+  text-decoration: underline;
+}

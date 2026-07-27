@@ -1,13 +1,14 @@
 import placeHolder from "../../assets/placeHolder.jpg";
 import { formatPrice } from "../../utils/money.js";
+import "./savedItems.css";
 
 export default function Saveditems({ item }) {
   return (
-    <div className="sitems-row">
-      <img className="sitems-image" src={placeHolder} alt="" />
-      <h3 className="sitems-title">{item.title}</h3>
-      <div className="sitems-price">{formatPrice(item.priceCents)}</div>
-      <p className="sdelivery">
+    <div className="saved-card">
+      <img className="saved-image" src={placeHolder} alt="" />
+      <h3 className="saved-title">{item.title}</h3>
+      <div className="saved-price">{formatPrice(item.priceCents)}</div>
+      <p className="saved-prime">
         <strong>Prime</strong> & FREE Returns
       </p>
       <button className="move-to-cart" aria-label="move to cart">

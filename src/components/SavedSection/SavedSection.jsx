@@ -1,4 +1,5 @@
 import SavedItems from "../SavedItems/SavedItems";
+import "./saveSection.css";
 
 export default function SavedSection({ items }) {
   const savedItems = items.map((item) => (
