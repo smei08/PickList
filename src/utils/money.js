@@ -10,5 +10,5 @@ export function formatPrice(cent) {
 export function subtotalCents(items, selectedIds) {
   return items
     .filter((item) => selectedIds.has(item.id))
-    .reduce((sum, item) => sum + item.priceCent * item.quantity, 0);
+    .reduce((sum, item) => sum + item.priceCents * item.quantity, 0);
 }

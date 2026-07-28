@@ -1,8 +1,15 @@
 import ItemRow from "../ItemRow/ItemRow";
 import "./cartSection.css";
 
-export default function CartSection({ items }) {
-  const CartItem = items.map((item) => <ItemRow key={item.id} item={item} />);
+export default function CartSection({ items, handleSelect, selected }) {
+  const CartItem = items.map((item) => (
+    <ItemRow
+      key={item.id}
+      item={item}
+      handleSelect={handleSelect}
+      selected={selected}
+    />
+  ));
 
   return (
     <div className="cart-section">

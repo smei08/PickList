@@ -2,10 +2,12 @@ import placeHolder from "../../assets/placeHolder.jpg";
 import { formatPrice } from "../../utils/money.js";
 import "./itemRow.css";
 
-export default function ItemRow({ item }) {
+export default function ItemRow({ item, handleSelect, selected }) {
   return (
     <div className="item-row">
       <input
+        onChange={() => handleSelect(item.id)}
+        checked={selected.has(item.id)}
         type="checkbox"
         className="item-checkbox"
         aria-label={`Select ${item.title}`}
