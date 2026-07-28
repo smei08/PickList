@@ -45,6 +45,9 @@ export default function CartPage() {
           selected={selected}
         />
       </div>
+      <h3>
+        Subtotal ({initialCartItems.length} items): {formatPrice(totalInCart)}
+      </h3>
       <SavedSection items={initialSavedItems} />
     </div>
   );

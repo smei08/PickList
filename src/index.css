@@ -9,4 +9,5 @@
 }
 .section-container {
   padding: 32px;
+  display: flex;
 }
