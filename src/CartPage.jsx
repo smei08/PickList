@@ -9,6 +9,8 @@ import "./index.css";
 
 export default function CartPage() {
   const [selected, setSelected] = useState(new Set());
+  const [cartItems, setCartItems] = useState(initialCartItems);
+  const [savedItems, setSaveItems] = useState(initialSavedItems);
 
   function handleSelect(id) {
     setSelected((prev) => {
@@ -22,33 +24,41 @@ export default function CartPage() {
     });
   }
 
-  const totalInCart = initialCartItems.reduce(
+  function handleBulkSave() {
+    const selectedItems = cartItems.filter((item) => selected.has(item.id));
+    setCartItems(cartItems.filter((item) => !selected.has(item.id)));
+    setSaveItems((prev) => [...selectedItems, ...prev]);
+    setSelected(new Set());
+  }
+
+  const totalInCart = cartItems.reduce(
     (sum, item) => sum + item.priceCents * item.quantity,
     0,
   );
 
-  const totalSelected = subtotalCents(initialCartItems, selected);
+  const totalSelected = subtotalCents(cartItems, selected);
 
   return (
     <div className="page-container">
       <Header />
       <div className="section-container">
         <CartSection
-          items={initialCartItems}
+          items={cartItems}
           handleSelect={handleSelect}
           selected={selected}
+          handleBulkSave={handleBulkSave}
         />
         <CartTotal
-          items={initialCartItems}
+          items={cartItems}
           totalInCart={totalInCart}
           totalSelected={totalSelected}
           selected={selected}
         />
       </div>
       <h3>
-        Subtotal ({initialCartItems.length} items): {formatPrice(totalInCart)}
+        Subtotal ({cartItems.length} items): {formatPrice(totalInCart)}
       </h3>
-      <SavedSection items={initialSavedItems} />
+      <SavedSection items={savedItems} />
     </div>
   );
 }
