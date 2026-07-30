@@ -1,13 +1,24 @@
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
+}
+body {
   margin: 0;
-  padding: 0;
 }
 #root {
-  width: 100vw;
   background-color: #d4d4d4;
+}
+.page-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .section-container {
   padding: 32px;
   display: flex;
+  justify-content: space-between;
+  max-width: 1500px;
+  gap: 16px;
 }

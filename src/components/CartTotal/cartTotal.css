@@ -1,0 +1,14 @@
+.total-container {
+  background-color: white;
+  height: fit-content;
+  padding: 32px;
+}
+.selected-total {
+  padding-bottom: 16px;
+}
+.move-to-cart-btn {
+  background-color: #ffd814;
+  padding: 8px 64px;
+  border: none;
+  border-radius: 16px;
+}

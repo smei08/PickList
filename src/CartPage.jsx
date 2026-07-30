@@ -73,6 +73,7 @@ export default function CartPage() {
           handleSelect={handleSelect}
           selected={selected}
           handleBulkSave={handleBulkSave}
+          totalInCart={totalInCart}
         />
         <CartTotal
           items={cartItems}
@@ -81,9 +82,7 @@ export default function CartPage() {
           selected={selected}
         />
       </div>
-      <h3>
-        Subtotal ({cartItems.length} items): {formatPrice(totalInCart)}
-      </h3>
+
       <SavedSection
         items={savedItems}
         saveSelected={savedSelected}

@@ -1,4 +1,5 @@
 import { formatPrice } from "../../utils/money";
+import "./cartTotal.css";
 
 export default function CartTotal({
   items,
@@ -9,9 +10,10 @@ export default function CartTotal({
   return (
     <div className="total-container">
       <div className="selected-total">
-        Subtotal ({selected.size} items): {formatPrice(totalSelected)}
+        Subtotal ({selected.size} items):{" "}
+        <strong>{formatPrice(totalSelected)}</strong>
       </div>
-      <button>Proceed to checkout</button>
+      <button className="move-to-cart-btn">Proceed to checkout</button>
     </div>
   );
 }
