@@ -6,6 +6,7 @@ export default function SavedSection({
   saveSelected,
   handleSavedSelect,
   handleBulkDelete,
+  handleBulkToCart,
 }) {
   const savedItems = items.map((item) => (
     <SavedItems
@@ -21,6 +22,9 @@ export default function SavedSection({
       <h2>Your Items!</h2>
       <button onClick={handleBulkDelete}>
         Delete {saveSelected.size} items
+      </button>
+      <button onClick={handleBulkToCart}>
+        Move {saveSelected.size} items to cart
       </button>
       <div className="saved-grid">{savedItems}</div>
     </section>

@@ -36,17 +36,25 @@ export default function CartPage() {
       return next;
     });
   }
+  function handleBulkSave() {
+    const selectedItems = cartItems.filter((item) => selected.has(item.id));
+    setCartItems(cartItems.filter((item) => !selected.has(item.id)));
+    setSaveItems((prev) => [...selectedItems, ...prev]);
+    setSelected(new Set());
+  }
 
   function handleBulkDelete() {
     setSaveItems(savedItems.filter((item) => !savedSelected.has(item.id)));
     setSavedSelected(new Set());
   }
 
-  function handleBulkSave() {
-    const selectedItems = cartItems.filter((item) => selected.has(item.id));
-    setCartItems(cartItems.filter((item) => !selected.has(item.id)));
-    setSaveItems((prev) => [...selectedItems, ...prev]);
-    setSelected(new Set());
+  function handleBulkToCart() {
+    const selectedItems = savedItems.filter((item) =>
+      savedSelected.has(item.id),
+    );
+    setSaveItems(savedItems.filter((item) => !savedSelected.has(item.id)));
+    setCartItems((prev) => [...prev, ...selectedItems]);
+    setSavedSelected(new Set());
   }
 
   const totalInCart = cartItems.reduce(
@@ -81,6 +89,7 @@ export default function CartPage() {
         saveSelected={savedSelected}
         handleSavedSelect={handleSavedSelect}
         handleBulkDelete={handleBulkDelete}
+        handleBulkToCart={handleBulkToCart}
       />
     </div>
   );
