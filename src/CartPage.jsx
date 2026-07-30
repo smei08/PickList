@@ -11,6 +11,7 @@ export default function CartPage() {
   const [selected, setSelected] = useState(new Set());
   const [cartItems, setCartItems] = useState(initialCartItems);
   const [savedItems, setSaveItems] = useState(initialSavedItems);
+  const [savedSelected, setSavedSelected] = useState(new Set());
 
   function handleSelect(id) {
     setSelected((prev) => {
@@ -22,6 +23,23 @@ export default function CartPage() {
       }
       return next;
     });
+  }
+
+  function handleSavedSelect(id) {
+    setSavedSelected((prev) => {
+      const next = new Set(prev);
+      if (next.has(id)) {
+        next.delete(id);
+      } else {
+        next.add(id);
+      }
+      return next;
+    });
+  }
+
+  function handleBulkDelete() {
+    setSaveItems(savedItems.filter((item) => !savedSelected.has(item.id)));
+    setSavedSelected(new Set());
   }
 
   function handleBulkSave() {
@@ -58,7 +76,12 @@ export default function CartPage() {
       <h3>
         Subtotal ({cartItems.length} items): {formatPrice(totalInCart)}
       </h3>
-      <SavedSection items={savedItems} />
+      <SavedSection
+        items={savedItems}
+        saveSelected={savedSelected}
+        handleSavedSelect={handleSavedSelect}
+        handleBulkDelete={handleBulkDelete}
+      />
     </div>
   );
 }
