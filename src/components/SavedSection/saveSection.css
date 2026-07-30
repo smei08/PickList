@@ -19,6 +19,41 @@
   gap: 0;
 }
 
+.bulk-delete-btn,
+.bulk-move-to-cart-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  color: #007185;
+  font-size: 14px;
+  cursor: pointer;
+  padding-bottom: 32px;
+}
+
+.bulk-delete-btn {
+  padding-right: 16px;
+}
+
+.bulk-move-to-cart-btn:hover {
+  background: none;
+  border: none;
+  padding: 0;
+  color: #007185;
+  font-size: 14px;
+  cursor: pointer;
+  text-decoration: underline;
+}
+.bulk-delete-btn:hover {
+  background: none;
+  border: none;
+  padding: 0;
+  color: #007185;
+  font-size: 14px;
+  cursor: pointer;
+  text-decoration: underline;
+  padding-right: 16px;
+}
+
 @media (max-width: 1000px) {
   .saved-grid {
     grid-template-columns: repeat(3, 1fr);

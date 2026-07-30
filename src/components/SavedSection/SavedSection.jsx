@@ -20,10 +20,10 @@ export default function SavedSection({
   return (
     <section className="saved-section">
       <h2>Your Items!</h2>
-      <button onClick={handleBulkDelete}>
+      <button className="bulk-delete-btn" onClick={handleBulkDelete}>
         Delete {saveSelected.size} items
       </button>
-      <button onClick={handleBulkToCart}>
+      <button className="bulk-move-to-cart-btn" onClick={handleBulkToCart}>
         Move {saveSelected.size} items to cart
       </button>
       <div className="saved-grid">{savedItems}</div>

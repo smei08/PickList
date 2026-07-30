@@ -49,9 +49,9 @@ export default function CartPage() {
   }
 
   function handleBulkToCart() {
-    const selectedItems = savedItems.filter((item) =>
-      savedSelected.has(item.id),
-    );
+    const selectedItems = savedItems
+      .filter((item) => savedSelected.has(item.id))
+      .map((item) => ({ ...item, quantity: 1 }));
     setSaveItems(savedItems.filter((item) => !savedSelected.has(item.id)));
     setCartItems((prev) => [...prev, ...selectedItems]);
     setSavedSelected(new Set());
